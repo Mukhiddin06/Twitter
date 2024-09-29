@@ -1,17 +1,20 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { BookmarksIcon, BookmarksIconActive, Dots, ExploreIcon, ExploreIconActive, HomeIcon, HomeIconActive, ListsIcon, ListsIconActive, MassagesIcon, MassagesIconActive, MoreIcon, NotificationsIcon, NotificationsIconActive, ProfileFillIcon, ProfileFillIconActive } from '../assets/images/Icons'
 import { Link, NavLink } from 'react-router-dom'
 import Logo from '../assets/images/logo.svg'
 import Button from './Button'
 import User from '../assets/images/user1.svg'
 import Modal from './Modal'
+import { Context } from '../context/AuthContext'
 
 function Navbar() {
     const [showModal, setShowModal] = useState(false)
+    const {path, setPath} = useContext(Context)
     const user = JSON.parse(localStorage.getItem("token"))
-    const [path, setPath] = useState(JSON.parse(localStorage.getItem("path")) || "/")
+    
 
     localStorage.setItem("path", JSON.stringify(path))
+
 
     const navbarList = [
         {
