@@ -37,7 +37,7 @@ function Register() {
       <Link to={"/"} className='text-[18px] leading-[24px] text-[#1DA1F2] cursor-pointer mb-[40px] block'>Sign In</Link>
       <h3 className='font-bold text-[18px] leading-[24px] mb-[10px]'>Date of birth</h3>
       <p className='text-[16px] leading-[24px] mb-[60px] opacity-60'>Facilisi sem pulvinar velit nunc, gravida scelerisque amet nibh sit. Quis bibendum ante phasellus metus, magna lacinia sed augue. Odio enim nascetur leo mauris vel eget. Pretium id ullamcorper blandit viverra dignissim eget tellus. Nibh mi massa in molestie a sit. Elit congue.</p>
-      <Button extraStyle={"h-[59px]"} type={"submit"}>
+      <Button extraStyle={"h-[59px] w-full"} type={"submit"}>
        {isLoading? <img className='scale-[3] mx-auto' src={LoadingIcon} alt="Loading" width={22}/> : 'Next'}
       </Button>
     </form>

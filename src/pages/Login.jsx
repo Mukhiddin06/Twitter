@@ -63,7 +63,7 @@ function Login() {
       <h2 className='font-roboto font-black text-[42px] leading-[49px] my-[36px]'>Log in to Twitter</h2>
       <LoginInput placeholder={"Phone number, email address"} type={"text"} name={"login"}/>
       <LoginInput placeholder={"Password"} type={"password"} name={"password"} extraStyle={"my-[25px]"}/>
-      <Button extraStyle={"h-[59px]"} type={"submit"}>
+      <Button extraStyle={"h-[59px] w-full"} type={"submit"}>
        {isLoading? <img className='scale-[3] mx-auto' src={LoadingIcon} alt="Loading" width={22}/> : 'Log In'}
       </Button>
       <div className='flex justify-between items-center mt-10'>
