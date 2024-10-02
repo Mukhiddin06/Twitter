@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link, Outlet, useNavigate } from 'react-router-dom'
 import { Arrow, BallIcon, CalendarIcon, LinkIcon, LocationIcon } from '../../assets/images/Icons'
-import BgPhoto from '../../assets/images/bg-photo.png'
+import BgPhoto from '../../assets/images/Bg-photo.png'
 import User from '../../assets/images/user1.svg'
 
 function Profile() {
