@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { DataIcon, GifIcon, ModeIcon, SaveIcon, SmileIcon, StatusIcon } from '../assets/images/Icons'
 import User from '../assets/images/user1.svg'
 import Button from '../components/Button'
@@ -9,12 +9,14 @@ import Kebab from '../assets/images/kebab.png'
 import PostItem from '../components/PostItem'
 import Loading from '../assets/images/loading.png'
 import Clear from '../assets/images/clear.svg'
+import { Context } from '../context/AuthContext'
 
 
 function Home() {
   const  [inputValue, setInputValue] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
   const [postImgUrl,  setPostImgUrl] = useState(null)
+  const {userPosts, setUserPosts} = useContext(Context)
   const [posts, setPosts] = useState([
     {
       id:1,
@@ -76,6 +78,7 @@ function Home() {
     setIsLoading(true)
     setTimeout(() => {
       setPosts([data, ...posts])
+      setUserPosts([data, ...userPosts])
       setPostImgUrl(null)
       e.target.reset()
       setIsLoading(false)
