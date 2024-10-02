@@ -25,7 +25,10 @@ function Home() {
       commentCount: "10",
       replyCount: "1",
       likeCount: "8",
-      postImg:null
+      postImg:null,
+      isCommented: false,
+      isReplied: false,
+      isLiked: false
     },
     {
       id:2,
@@ -36,7 +39,10 @@ function Home() {
       commentCount: null,
       replyCount: "5",
       likeCount: "9",
-      postImg:null
+      postImg:null,
+      isCommented: false,
+      isReplied: false,
+      isLiked: false
     },
     {
       id:3,
@@ -47,7 +53,10 @@ function Home() {
       commentCount: "10",
       replyCount: "1",
       likeCount: "8",
-      postImg: Kebab
+      postImg: Kebab,
+      isCommented: false,
+      isReplied: false,
+      isLiked: false
     }
   ])
 
@@ -110,7 +119,7 @@ function Home() {
           {isLoading ? <img className='mx-auto scale-[3]' src={Loading} alt='Loading' width={22}/> : "Tweet"}
         </Button>
       </form>
-      <ul>{posts.map(item => <PostItem key={item.id} item={item}/>)}</ul>
+      <ul>{posts.map(item => <PostItem posts={posts} setPosts={setPosts} key={item.id} item={item}/>)}</ul>
     </div>
   )
 }
